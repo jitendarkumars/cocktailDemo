@@ -1,0 +1,35 @@
+.drink_detail_container {
+    display: flex;
+    margin: 50px;
+
+}
+
+.drink_detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.drink_detail_image {
+    width: 250px;
+    height: 500px;
+    border-radius: 15px;
+}
+.drink_detail_description {
+
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 25px;
+    label{
+        color: gray;
+        padding: 10px;
+    }
+
+    h5{
+        display: inline;
+        font-size: 20px;
+        font-weight: bolder;
+        color: black;
+        margin-left: 15px;
+    }
+}

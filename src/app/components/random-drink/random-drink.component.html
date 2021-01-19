@@ -1,0 +1,29 @@
+<div *ngIf="getRandomDrink$ | async as randomDrink">
+  <div class="randon_drink_title">Your's Special</div>
+  <div class="random_drink_container" *ngFor="let drink of randomDrink.drinks">
+    <div class="random_drink_card">
+      <img class="random_drink_img" width="220" height="220" src={{drink.strDrinkThumb}} />
+
+      <h3>
+        {{drink.strDrink}}
+      </h3>
+
+
+    </div>
+    <div class="random_drink_details">
+
+      <div><span>Category: </span>{{drink.strCategory}}</div>
+      <div><span>Alocohlic: </span>{{drink.strAlcoholic}} </div>
+      <div> <span> Instruction:</span> {{drink.strInstructions}} </div>
+
+    </div>
+
+    <div class="random_drink_card_new_drink">
+
+      <button (click)="getNewDrink()">Get New Drink</button>
+
+    </div>
+
+  </div>
+
+</div>

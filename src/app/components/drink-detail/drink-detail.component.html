@@ -1,0 +1,45 @@
+<div class="drink_detail_container" *ngIf="drinkDetail$ | async as drinkDetails">
+  <ng-container *ngFor="let drinkDetail of drinkDetails.drinks | ingredientFormatter">
+
+
+
+    <div class="drink_detail">
+      <img class="drink_detail_image" src="{{drinkDetail.strDrinkThumb}}" />
+      <h2>{{drinkDetail.strDrink}}</h2>
+    </div>
+
+
+    <div class="drink_detail_description">
+
+      <label>Drink Category:
+        <h5>{{drinkDetail.strCategory}}</h5></label>
+
+      <label>Alcoholic ?:<h5>{{drinkDetail.strAlcoholic}}</h5></label>
+
+      <label>Glass:<h5>{{drinkDetail.strGlass}}</h5></label>
+
+      <label>Ingredients:
+        <h5>
+          <ng-container *ngFor="let ingredients of drinkDetail.ingredients">
+            <span> {{ingredients}},</span>
+          </ng-container>
+        </h5>
+      </label>
+      <label>Measurement:
+        <h5>
+
+          <ng-container *ngFor="let measurement of drinkDetail.measurements">
+            {{measurement}},
+          </ng-container>
+        </h5>
+      </label>
+      <label>Instructions:<h5>{{drinkDetail.strInstructions}}</h5></label>
+
+    </div>
+
+
+  </ng-container>
+
+
+
+</div>

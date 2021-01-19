@@ -1,0 +1,66 @@
+<!-- 
+<div *ngIf="drinks$ | async as drinks">
+  <div *ngFor="let drink of drinks.drinks">
+    {{drink.strDrink}}
+  </div>
+</div>
+
+
+<div *ngIf="getCategoryList$ | async as categories">
+  <div *ngFor="let category of categories.drinks">
+    {{category.strCategory}}
+  </div>
+</div>
+
+<div *ngIf="getIngredientsList$ | async as ingredients">
+  <div *ngFor="let ingredient of ingredients.drinks">
+    {{ingredient.strIngredient1}}
+  </div>
+</div>
+
+<div *ngIf="getAlcoholicTypeList$ | async as alcoholType">
+  <div *ngFor="let alcohol of alcoholType.drinks">
+    {{alcohol.strAlcoholic}}
+  </div>
+</div> -->
+
+<div class="content">
+
+  <random-drink></random-drink>
+
+  <form [formGroup]="drinkSearchForm">
+    <div class="input-group ">
+      <select class="input-group-text" formControlName="searchType">
+        <option value="Name">Name</option>
+        <option value="Ingredient">Ingredient</option>
+        <!-- <option value="Type">Type</option> -->
+      </select>
+      <input type="text" class="form-control" placeholder="Search Drinks" formControlName="searchValue" />
+    </div>
+  </form>
+</div>
+<form [formGroup]="filterForm">
+  <div *ngIf="drinks$ | async as drinks">
+    <div class="filter_area" *ngIf="getAlcoholicTypeList$ | async as alcoholType">
+      <div *ngFor="let alcohol of alcoholType.drinks">
+        <input formControlName="alcoholType" name="alcoholType" type="radio" id="{{alcohol.strAlcoholic}}"
+          value={{alcohol.strAlcoholic}}> <label for="{{alcohol.strAlcoholic}}">{{alcohol.strAlcoholic}} </label> </div>
+      <div *ngIf="getCategoryList$ | async as categories">
+        <select class="input-group" formControlName="category">
+          <option value=''> Select your category</option>
+          <option *ngFor="let category of categories.drinks" value="{{category.strCategory}}">{{category.strCategory}}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="card-container">
+      <a class="card" *ngFor="let drink of drinks.drinks | filterPipe: [alcoholType.value,category.value]"
+        [routerLink]="['/details',{id:drink.idDrink}]">
+        <img class="card-image" src="{{drink.strDrinkThumb}}">
+        <div class=" card-title"> {{drink.strDrink}}</div>
+      </a>
+    </div>
+
+  </div>
+</form>

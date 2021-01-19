@@ -1,0 +1,54 @@
+.random_drink_img {
+    border-radius: 10px;
+}
+
+.random_drink_container {
+    display: flex;
+    flex-direction: row;
+}
+
+.randon_drink_title {
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.random_drink_card {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-end;
+    h3 {
+        justify-content: center;
+    }
+}
+
+.random_drink_details {
+    margin: 20px;
+    max-width: 350px;
+    span {
+        font-size: 22px;
+        font-weight: bolder;
+    }
+}
+
+.random_drink_card_new_drink {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    button {
+            background-color: #f86228; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+          
+    }
+
+}
+
