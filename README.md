@@ -4,6 +4,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
+prerequisites : Nodejs installed on your system, angular cli 8 or above
+
+  1. Clone this project.
+  2. cd into the project.
+  3. run npm install.
+  4. ng serve.
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
